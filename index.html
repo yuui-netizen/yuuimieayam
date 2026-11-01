@@ -62,7 +62,7 @@
           body: JSON.stringify({ nama, masalah: 'Lokasi: ' + lokasi + '\nKerusakan: ' + keterangan })
         });
         const data = await res.json();
-        if (!res.ok || data.status !== 'DITERIMA') throw new Error(data.pesan || 'Pengiriman gagal.');
+        if (!res.ok || data.status !== 'diterima') throw new Error(data.pesan || 'Pengiriman gagal.');
         hasil.textContent = 'Laporan berhasil diterima. Nomor tiket: ' + data.tiket;
         form.reset();
       } catch (err) {
